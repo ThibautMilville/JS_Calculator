@@ -1,0 +1,23 @@
+:root {
+  --white: #fff;
+  --dark-gray: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font: 400 16px Roboto, sans-serif;
+}
+body section.calculator {
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: var(--dark-gray);
+}/*# sourceMappingURL=style.css.map */
