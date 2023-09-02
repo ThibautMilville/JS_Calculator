@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JS Calculator</title>
   <link rel="stylesheet" href="style/style.css">
 </head>
+
 <body>
   <section class="calculator">
-    <div class="display">
-      <input type="text" name="display">
-    </div>
-    <div class="row1">
-      <input type="button" value="AC">
-      <input type="button" value="DE">
-      <input type="button" value=".">
-      <input type="button" value="/">
-    </div>
-    <div class="row2">
-      <input type="button" value="7">
-      <input type="button" value="8">
-      <input type="button" value="9">
-      <input type="button" value="*">
-    </div>
-    <div class="row3">
-      <input type="button">
-      <input type="button">
-      <input type="button">
-    </div>
-    <div class="row4">
-      <input type="button">
-      <input type="button">
-      <input type="button">
-    </div>
-    <div class="row5">
-      <input type="button">
-      <input type="button">
-      <input type="button">
-    </div>
+    <form>
+      <div class="display">
+        <input type="text" name="display">
+      </div>
+      <div class="row1">
+        <input type="button" class="operator" value="AC">
+        <input type="button" class="operator" value="DE">
+        <input type="button" class="operator" value=".">
+        <input type="button" class="operator" value="/">
+      </div>
+      <div class="row2">
+        <input type="button" value="7">
+        <input type="button" value="8">
+        <input type="button" value="9">
+        <input type="button" class="operator" value="*">
+      </div>
+      <div class="row3">
+        <input type="button" value="4">
+        <input type="button" value="5">
+        <input type="button" value="6">
+        <input type="button" class="operator" value="-">
+      </div>
+      <div class="row4">
+        <input type="button" value="1">
+        <input type="button" value="2">
+        <input type="button" value="3">
+        <input type="button" class="operator" value="+">
+      </div>
+      <div class="row5">
+        <input type="button" value="00">
+        <input type="button" value="0">
+        <input type="button" class="operator" colspan="2" value="=">
+      </div>
+    </form>
   </section>
+  <script src="script.js"></script>
 </body>
+
 </html>
