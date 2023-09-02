@@ -5,10 +5,10 @@ class calculator {
   }
 
   load() {
-    this.add();
+    this.calculate();
   }
 
-  add() {
+  calculate() {
     this.inputs.forEach((input) => {
       input.addEventListener("click", (e) => {
         if(e.target.value == "=") {
