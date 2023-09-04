@@ -47,8 +47,10 @@ class calculator {
               } else {
                 this.inputDisplay.value += input.value;
               }
-              // Add a blank space if the number's length is greater than 3
+              // Add spaces every 3 digits
               if (this.inputDisplay.value.length > 3) {
+                // Remove all spaces and add spaces every 3 digits
+                this.inputDisplay.value = this.inputDisplay.value.replace(/\s/g, "");
                 this.inputDisplay.value = this.inputDisplay.value.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ");
               }
               break;
