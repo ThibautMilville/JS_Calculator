@@ -8,12 +8,30 @@ class calculator {
     this.calculate();
   }
 
+  // Functions
+  // Manage space between digits and operators
+  addSpaceBetweenDigits() {
+    if (this.inputDisplay.value.length > 3) {
+      // Remove all spaces and add spaces every 3 digits
+      this.inputDisplay.value = this.inputDisplay.value.replace(/\s/g, "").replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ");
+      // Add space between the operator and the number
+      this.inputDisplay.value = this.inputDisplay.value.replace(/(\d)([\+\-\*\/])/g, "$1 $2 ");
+      // Remove the space after an operator if it is the last character
+      this.inputDisplay.value = this.inputDisplay.value.replace(/([\+\-\*\/])\s$/g, "$1");
+    }
+  }
+
+
+  // Event listener
+  // Calculate the input
   calculate() {
     this.inputs.forEach((input) => {
       input.addEventListener("click", (e) => {
         if (e.target.value == "=") {
           if (this.inputDisplay.value != "") {
-            this.inputDisplay.value = parseFloat(eval(this.inputDisplay.value).toFixed(2));
+            let expressionWithoutSpace = this.inputDisplay.value.replace(/\s+/g, '');
+            this.inputDisplay.value = parseFloat(eval(expressionWithoutSpace).toFixed(2));
+            this.addSpaceBetweenDigits();
           } else {
             this.inputDisplay.value = "0";
           }
@@ -40,18 +58,9 @@ class calculator {
               // Remove the 0 if it is the first number
               if (this.inputDisplay.value == "0") {
                 this.inputDisplay.value = "";
-              }
-              // Add a space before and after the operator
-              if (input.value.match(/[\+\-\*\/]/)) {
-                this.inputDisplay.value += " " + input.value + " ";
               } else {
                 this.inputDisplay.value += input.value;
-              }
-              // Add spaces every 3 digits
-              if (this.inputDisplay.value.length > 3) {
-                // Remove all spaces and add spaces every 3 digits
-                this.inputDisplay.value = this.inputDisplay.value.replace(/\s/g, "");
-                this.inputDisplay.value = this.inputDisplay.value.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ");
+                this.addSpaceBetweenDigits();
               }
               break;
           }
