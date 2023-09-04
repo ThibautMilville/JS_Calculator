@@ -9,7 +9,7 @@ class calculator {
   }
 
   // Functions
-  // Manage space between digits and operators
+  // Add space between digits and operators
   addSpaceBetweenDigits() {
     if (this.inputDisplay.value.length > 3) {
       // Remove all spaces and add spaces every 3 digits
