@@ -23,7 +23,11 @@ class calculator {
               this.inputDisplay.value = "0";
               break;
             case "DE":
-              this.inputDisplay.value = this.inputDisplay.value.substring(0, this.inputDisplay.value.length - 1);
+              if(this.inputDisplay.value.length == 1) {
+                this.inputDisplay.value = "0";
+              } else {
+                this.inputDisplay.value = this.inputDisplay.value.substring(0, this.inputDisplay.value.length - 1);
+              }
               break;
             case ".":
               // Split the input by operators and check if the last number has a decimal
