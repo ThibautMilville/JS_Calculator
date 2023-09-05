@@ -57,7 +57,7 @@ class calculator {
             default:
               // Remove the 0 if it is the first number
               if (this.inputDisplay.value == "0") {
-                this.inputDisplay.value = "";
+                this.inputDisplay.value = "" + input.value;
               } else {
                 this.inputDisplay.value += input.value;
                 this.addSpaceBetweenDigits();
