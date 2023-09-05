@@ -29,6 +29,7 @@ class Calculator {
       input.addEventListener("click", (e) => {
         if (e.target.value == "=") {
           if (this.inputDisplay.value != "") {
+            // Remove all spaces and calculate the expression
             let expressionWithoutSpace = this.inputDisplay.value.replace(/\s+/g, '');
             this.inputDisplay.value = parseFloat(eval(expressionWithoutSpace).toFixed(2));
             this.addSpaceBetweenDigits();
