@@ -1,4 +1,4 @@
-class calculator {
+class Calculator {
   constructor() {
     this.inputDisplay = document.getElementsByName("display")[0];
     this.inputs = document.querySelectorAll("input");
@@ -70,5 +70,5 @@ class calculator {
   }
 }
 
-calculator = new calculator();
+calculator = new Calculator();
 calculator.load();
